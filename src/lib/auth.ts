@@ -1,0 +1,18 @@
+"use client";
+
+const KEY = "kaypee_token";
+
+export function setToken(token: string){
+  if (typeof window === "undefined") return;
+  localStorage.setItem(KEY, token);
+}
+
+export function getToken(){
+  if (typeof window === "undefined") return "";
+  return localStorage.getItem(KEY) || "";
+}
+
+export function clearToken(){
+  if (typeof window === "undefined") return;
+  localStorage.removeItem(KEY);
+}
