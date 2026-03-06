@@ -19,7 +19,7 @@ const onBuy = async () => {
     const data = await res.json();
 
     if (data.success) {
-      setMsg("Bundle order placed successfully");
+      setMsg(data.message || "Bundle order placed successfully");
     } else {
       setMsg(data.message || "Order failed");
     }
